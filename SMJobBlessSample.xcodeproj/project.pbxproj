@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6951569A2180C8BA001401CD /* Installer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695156992180C8BA001401CD /* Installer.swift */; };
+		6951569E2180CC0D001401CD /* XPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951569D2180CC0D001401CD /* XPCClient.swift */; };
+		695156A12180CF5E001401CD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695156A02180CF5E001401CD /* MainViewController.swift */; };
+		69953BF7222963A80097F5AF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69953BF6222963A80097F5AF /* Util.swift */; };
+		69953BF9222964150097F5AF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69953BF8222964150097F5AF /* Protocols.swift */; };
+		69953BFA222964150097F5AF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69953BF8222964150097F5AF /* Protocols.swift */; };
+		69F1BB352180A00100F17870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F1BB342180A00100F17870 /* AppDelegate.swift */; };
+		69F1BB372180A00200F17870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F1BB362180A00200F17870 /* Assets.xcassets */; };
+		69F1BB3A2180A00200F17870 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F1BB382180A00200F17870 /* MainMenu.xib */; };
+		69F1BB492180A02700F17870 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F1BB482180A02700F17870 /* main.swift */; };
+		69F1BB502180A27000F17870 /* com.smjobblesssample.installer in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69F1BB462180A02600F17870 /* com.smjobblesssample.installer */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		69F1BB5D2180C30500F17870 /* XPCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F1BB5C2180C30500F17870 /* XPCServer.swift */; };
+		69F1BB5F2180C33600F17870 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F1BB5E2180C33600F17870 /* Constants.swift */; };
+		69F1BB602180C33600F17870 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F1BB5E2180C33600F17870 /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69F1BB512180A27B00F17870 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69F1BB292180A00100F17870 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69F1BB452180A02600F17870;
+			remoteInfo = com.test.helperTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		69F1BB442180A02600F17870 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		69F1BB4F2180A26700F17870 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				69F1BB502180A27000F17870 /* com.smjobblesssample.installer in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		695156992180C8BA001401CD /* Installer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installer.swift; sourceTree = "<group>"; };
+		6951569D2180CC0D001401CD /* XPCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCClient.swift; sourceTree = "<group>"; };
+		695156A02180CF5E001401CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		69953BF5222961110097F5AF /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		69953BF6222963A80097F5AF /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		69953BF8222964150097F5AF /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		69F1BB312180A00100F17870 /* Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F1BB342180A00100F17870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69F1BB362180A00200F17870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69F1BB392180A00200F17870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		69F1BB3B2180A00200F17870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69F1BB462180A02600F17870 /* com.smjobblesssample.installer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.smjobblesssample.installer; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F1BB482180A02700F17870 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		69F1BB4D2180A12E00F17870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69F1BB4E2180A1D000F17870 /* launchd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = launchd.plist; sourceTree = "<group>"; };
+		69F1BB532180B78B00F17870 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		69F1BB5C2180C30500F17870 /* XPCServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCServer.swift; sourceTree = "<group>"; };
+		69F1BB5E2180C33600F17870 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69F1BB2E2180A00100F17870 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F1BB432180A02600F17870 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69953BF422295FAF0097F5AF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				69F1BB5E2180C33600F17870 /* Constants.swift */,
+				69953BF8222964150097F5AF /* Protocols.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		69F1BB282180A00100F17870 = {
+			isa = PBXGroup;
+			children = (
+				69F1BB532180B78B00F17870 /* README.md */,
+				69953BF5222961110097F5AF /* LICENSE */,
+				69F1BB332180A00100F17870 /* Client */,
+				69F1BB472180A02700F17870 /* com.smjobblesssample.installer */,
+				69953BF422295FAF0097F5AF /* Common */,
+				69F1BB322180A00100F17870 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69F1BB322180A00100F17870 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69F1BB312180A00100F17870 /* Client.app */,
+				69F1BB462180A02600F17870 /* com.smjobblesssample.installer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69F1BB332180A00100F17870 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				69F1BB342180A00100F17870 /* AppDelegate.swift */,
+				695156A02180CF5E001401CD /* MainViewController.swift */,
+				6951569D2180CC0D001401CD /* XPCClient.swift */,
+				69953BF6222963A80097F5AF /* Util.swift */,
+				69F1BB362180A00200F17870 /* Assets.xcassets */,
+				69F1BB382180A00200F17870 /* MainMenu.xib */,
+				69F1BB3B2180A00200F17870 /* Info.plist */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		69F1BB472180A02700F17870 /* com.smjobblesssample.installer */ = {
+			isa = PBXGroup;
+			children = (
+				69F1BB482180A02700F17870 /* main.swift */,
+				69F1BB5C2180C30500F17870 /* XPCServer.swift */,
+				695156992180C8BA001401CD /* Installer.swift */,
+				69F1BB4D2180A12E00F17870 /* Info.plist */,
+				69F1BB4E2180A1D000F17870 /* launchd.plist */,
+			);
+			path = com.smjobblesssample.installer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69F1BB302180A00100F17870 /* Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69F1BB3F2180A00200F17870 /* Build configuration list for PBXNativeTarget "Client" */;
+			buildPhases = (
+				69F1BB2D2180A00100F17870 /* Sources */,
+				69F1BB2E2180A00100F17870 /* Frameworks */,
+				69F1BB2F2180A00100F17870 /* Resources */,
+				69F1BB4F2180A26700F17870 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69F1BB522180A27B00F17870 /* PBXTargetDependency */,
+			);
+			name = Client;
+			productName = SMJobBlessTest;
+			productReference = 69F1BB312180A00100F17870 /* Client.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69F1BB452180A02600F17870 /* com.smjobblesssample.installer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69F1BB4A2180A02700F17870 /* Build configuration list for PBXNativeTarget "com.smjobblesssample.installer" */;
+			buildPhases = (
+				69F1BB422180A02600F17870 /* Sources */,
+				69F1BB432180A02600F17870 /* Frameworks */,
+				69F1BB442180A02600F17870 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = com.smjobblesssample.installer;
+			productName = HelperTool;
+			productReference = 69F1BB462180A02600F17870 /* com.smjobblesssample.installer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69F1BB292180A00100F17870 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					69F1BB302180A00100F17870 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+					69F1BB452180A02600F17870 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 69F1BB2C2180A00100F17870 /* Build configuration list for PBXProject "SMJobBlessSample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69F1BB282180A00100F17870;
+			productRefGroup = 69F1BB322180A00100F17870 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69F1BB302180A00100F17870 /* Client */,
+				69F1BB452180A02600F17870 /* com.smjobblesssample.installer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69F1BB2F2180A00100F17870 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F1BB372180A00200F17870 /* Assets.xcassets in Resources */,
+				69F1BB3A2180A00200F17870 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69F1BB2D2180A00100F17870 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				695156A12180CF5E001401CD /* MainViewController.swift in Sources */,
+				69F1BB352180A00100F17870 /* AppDelegate.swift in Sources */,
+				69953BF9222964150097F5AF /* Protocols.swift in Sources */,
+				6951569E2180CC0D001401CD /* XPCClient.swift in Sources */,
+				69F1BB5F2180C33600F17870 /* Constants.swift in Sources */,
+				69953BF7222963A80097F5AF /* Util.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F1BB422180A02600F17870 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69953BFA222964150097F5AF /* Protocols.swift in Sources */,
+				6951569A2180C8BA001401CD /* Installer.swift in Sources */,
+				69F1BB5D2180C30500F17870 /* XPCServer.swift in Sources */,
+				69F1BB492180A02700F17870 /* main.swift in Sources */,
+				69F1BB602180C33600F17870 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69F1BB522180A27B00F17870 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69F1BB452180A02600F17870 /* com.smjobblesssample.installer */;
+			targetProxy = 69F1BB512180A27B00F17870 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69F1BB382180A00200F17870 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69F1BB392180A00200F17870 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69F1BB3D2180A00200F17870 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		69F1BB3E2180A00200F17870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		69F1BB402180A00200F17870 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CZPU3C72KU;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smjobblesssample.uiapplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		69F1BB412180A00200F17870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CZPU3C72KU;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smjobblesssample.uiapplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		69F1BB4B2180A02700F17870 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				DEVELOPMENT_TEAM = CZPU3C72KU;
+				INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"$(SRCROOT)/$(TARGET_NAME)/launchd.plist",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		69F1BB4C2180A02700F17870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				DEVELOPMENT_TEAM = CZPU3C72KU;
+				INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"$(SRCROOT)/$(TARGET_NAME)/launchd.plist",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69F1BB2C2180A00100F17870 /* Build configuration list for PBXProject "SMJobBlessSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69F1BB3D2180A00200F17870 /* Debug */,
+				69F1BB3E2180A00200F17870 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69F1BB3F2180A00200F17870 /* Build configuration list for PBXNativeTarget "Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69F1BB402180A00200F17870 /* Debug */,
+				69F1BB412180A00200F17870 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69F1BB4A2180A02700F17870 /* Build configuration list for PBXNativeTarget "com.smjobblesssample.installer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69F1BB4B2180A02700F17870 /* Debug */,
+				69F1BB4C2180A02700F17870 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69F1BB292180A00100F17870 /* Project object */;
+}

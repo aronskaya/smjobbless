@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.smjobblesssample.installer</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>SMAuthorizedClients</key>
+	<array>
+		<string>identifier &quot;com.smjobblesssample.uiapplication&quot; and anchor apple generic and certificate leaf[subject.CN] = &quot;Mac Developer: aronskaya.yulia@gmail.com (YB5EXT63YE)&quot; and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+	</array>
+</dict>
+</plist>
