@@ -1,22 +1,28 @@
-#  How to create project with SMJobBless()
+# Example prooject: SMJobBless()
 
 In this example a simple UI application (`Client` target) launches a Helper Tool (root process, see `com.smjobblesssample.installer` target) in order to perform installation of some other application. Installation usually requires root privileges, so we take this use case as an example.
 
 Also this sample shows how to establish an XPC connection between UI application and the Helper Tool.
 
+## How to make this work
+In order to see the code in this repository working:
+Replace "Mac Developer: mail@example.com (ABCDEFGHIJ)" in both Info.plist files with the certificate, that you use to sign targets. The correct name of the certificate you use can be found in `Keychain`. Double-click the certificate in the list and copy it's `Common name`.
+
+First Info.plist file is located in `Client` target, second — in `com.smjobblesssample.installer` target.
+
 
 ## Used Definitions
 
 
-Term                                  	| Definition
------------                       	| -------------
-Client                                    	| UI application, that requires some installation services
-Server                                   | Helper tool (provides some installation services)
-`launchd`                             | A system daemon, that manages loading all other processes
-`launchd job label`        | A unique string, that describes the service, that is provided by the Helper Tool. In order to start the Helper tool, we need to register its label with `launchd`. A convention is to use reverse DNS notation, like `com.myApp.myService` or `com.myCompany.myApp.myService`. For example: `com.superDruperReader.installation`.
+Term  							| Definition
+------------					| -------------
+Client							| UI application, that requires some installation services
+Server							| Helper tool (provides some installation services)
+`launchd`						| A system daemon, that manages loading all other processes
+`launchd job label` 		| A unique string, that describes the service, that is provided by the Helper Tool. In order to start the Helper tool, we need to register its label with `launchd`. A convention is to use reverse DNS notation, like `com.myApp.myService` or `com.myCompany.myApp.myService`. For example: `com.superDruperReader.installation`.
 
 
-## Steps
+## How to make your own project, making use of SMJobBless()
 
 ### 1. Create targets
 
@@ -33,9 +39,9 @@ Destination: select 'Wrapper'
 Subpath: paste ```Contents/Library/LaunchServices```
 Add the Server application to this Copy Files phase.
 
-### 3. Setup signing requirements    
+### 3. Setup signing requirements
 
-* Check that you sign both applications.
+* Check that you sign both applications. 
 
 #### 3.1 Client
 
@@ -49,7 +55,7 @@ Add there a key-value pair:
 
 **Example:**
 
-Key             | Value
+Key  | Value
 ------------- | -------------
 ```identifier "com.smjobblesssample.installer" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: mail@example.com (ABCDEFGHIJ)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */```
 
