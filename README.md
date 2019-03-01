@@ -8,12 +8,12 @@ Also this sample shows how to establish an XPC connection between UI application
 ## Used Definitions
 
 
-Term                              | Definition
-------------                    | -------------
-Client                            | UI application, that requires some installation services
-Server                            | Helper tool (provides some installation services)
-`launchd`                        | A system daemon, that manages loading all other processes
-`launchd job label`         | A unique string, that describes the service, that is provided by the Helper Tool. In order to start the Helper tool, we need to register its label with `launchd`. A convention is to use reverse DNS notation, like `com.myApp.myService` or `com.myCompany.myApp.myService`. For example: `com.superDruperReader.installation`.
+Term                                  	| Definition
+-----------                       	| -------------
+Client                                    	| UI application, that requires some installation services
+Server                                   | Helper tool (provides some installation services)
+`launchd`                             | A system daemon, that manages loading all other processes
+`launchd job label`        | A unique string, that describes the service, that is provided by the Helper Tool. In order to start the Helper tool, we need to register its label with `launchd`. A convention is to use reverse DNS notation, like `com.myApp.myService` or `com.myCompany.myApp.myService`. For example: `com.superDruperReader.installation`.
 
 
 ## Steps
@@ -39,7 +39,7 @@ Add the Server application to this Copy Files phase.
 
 #### 3.1 Client
 
-![Client's Info.plist Example](client.info.plist.png)
+![Client's Info.plist Example](./Screenshots/client.info.plist.png)
 
 * To client's `Info.plist` add ```SMPrivilegedExecutables``` key with type `Dictionary`
 Add there a key-value pair:
@@ -49,7 +49,7 @@ Add there a key-value pair:
 
 **Example:**
 
-Key  | Value
+Key             | Value
 ------------- | -------------
 ```identifier "com.smjobblesssample.installer" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: mail@example.com (ABCDEFGHIJ)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */```
 
@@ -58,7 +58,7 @@ Key  | Value
 * Create an `Info.plist` and `launchd.plist` files (you can name them whatever) for the Server.
 
 ##### 3.2.1 Launchd.plist
-![Launchd.plist example](launchd.plist.png)
+![Launchd.plist example](./Screenshots/launchd.plist.png)
 
 * Add `Label` key with launchd job label value.
 * Add `MachServices` key with `Dictionary` type. Add there a key-value pair with launchd job label as key and `YES` Boolean as a value.
@@ -71,11 +71,11 @@ __launchd_plist
 $(SRCROOT)/${TARGET_NAME}/launchd.plist
 ```
 
-![Other linker flags example](otherLinkerFlags.png)
+![Other linker flags example](./Screenshots/otherLinkerFlags.png)
 
 ##### 3.2.2 Info.plist
 
-![Info.plist example](info.plist.png)
+![Info.plist example](./Screenshots/info.plist.png)
 
 * Add `CFBundleIdentifier` and paste there its bundle identifier.
 
