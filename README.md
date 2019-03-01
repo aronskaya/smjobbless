@@ -1,4 +1,4 @@
-# Example prooject: SMJobBless()
+# Example project: SMJobBless()
 
 In this example a simple UI application (`Client` target) launches a Helper Tool (root process, see `com.smjobblesssample.installer` target) in order to perform installation of some other application. Installation usually requires root privileges, so we take this use case as an example.
 
