@@ -13,6 +13,7 @@
 		69953BF7222963A80097F5AF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69953BF6222963A80097F5AF /* Util.swift */; };
 		69953BF9222964150097F5AF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69953BF8222964150097F5AF /* Protocols.swift */; };
 		69953BFA222964150097F5AF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69953BF8222964150097F5AF /* Protocols.swift */; };
+		69B4842C248D700E0077EFCE /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69953BF5222961110097F5AF /* LICENSE.txt */; };
 		69F1BB352180A00100F17870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F1BB342180A00100F17870 /* AppDelegate.swift */; };
 		69F1BB372180A00200F17870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F1BB362180A00200F17870 /* Assets.xcassets */; };
 		69F1BB3A2180A00200F17870 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F1BB382180A00200F17870 /* MainMenu.xib */; };
@@ -59,7 +60,7 @@
 		695156992180C8BA001401CD /* Installer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installer.swift; sourceTree = "<group>"; };
 		6951569D2180CC0D001401CD /* XPCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCClient.swift; sourceTree = "<group>"; };
 		695156A02180CF5E001401CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		69953BF5222961110097F5AF /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		69953BF5222961110097F5AF /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		69953BF6222963A80097F5AF /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		69953BF8222964150097F5AF /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		69B48390248D36CC0077EFCE /* SecuringXPCConnection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SecuringXPCConnection.md; sourceTree = "<group>"; };
@@ -122,7 +123,7 @@
 			children = (
 				69F1BB532180B78B00F17870 /* README.md */,
 				69B48390248D36CC0077EFCE /* SecuringXPCConnection.md */,
-				69953BF5222961110097F5AF /* LICENSE */,
+				69953BF5222961110097F5AF /* LICENSE.txt */,
 				69F1BB332180A00100F17870 /* Client */,
 				69F1BB472180A02700F17870 /* com.smjobblesssample.installer */,
 				69953BF422295FAF0097F5AF /* Common */,
@@ -256,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B4842C248D700E0077EFCE /* LICENSE.txt in Resources */,
 				69F1BB372180A00200F17870 /* Assets.xcassets in Resources */,
 				69F1BB3A2180A00200F17870 /* MainMenu.xib in Resources */,
 			);
