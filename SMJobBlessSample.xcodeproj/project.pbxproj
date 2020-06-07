@@ -62,6 +62,11 @@
 		69953BF5222961110097F5AF /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		69953BF6222963A80097F5AF /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		69953BF8222964150097F5AF /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		69B48390248D36CC0077EFCE /* SecuringXPCConnection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SecuringXPCConnection.md; sourceTree = "<group>"; };
+		69B48421248D3EAC0077EFCE /* com.smjobblesssample.installer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.smjobblesssample.installer-Bridging-Header.h"; sourceTree = "<group>"; };
+		69B48425248D3ED70077EFCE /* NSXPCConnection+AuditToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSXPCConnection+AuditToken.h"; sourceTree = "<group>"; };
+		69B4842A248D50E20077EFCE /* uninstall_privileged_helper.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = uninstall_privileged_helper.sh; sourceTree = "<group>"; };
+		69B4842B248D555E0077EFCE /* SMJobBlessUtil.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
 		69F1BB312180A00100F17870 /* Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F1BB342180A00100F17870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69F1BB362180A00200F17870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,14 +108,25 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		69B48428248D50B10077EFCE /* Handy Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				69B4842B248D555E0077EFCE /* SMJobBlessUtil.py */,
+				69B4842A248D50E20077EFCE /* uninstall_privileged_helper.sh */,
+			);
+			path = "Handy Scripts";
+			sourceTree = "<group>";
+		};
 		69F1BB282180A00100F17870 = {
 			isa = PBXGroup;
 			children = (
 				69F1BB532180B78B00F17870 /* README.md */,
+				69B48390248D36CC0077EFCE /* SecuringXPCConnection.md */,
 				69953BF5222961110097F5AF /* LICENSE */,
 				69F1BB332180A00100F17870 /* Client */,
 				69F1BB472180A02700F17870 /* com.smjobblesssample.installer */,
 				69953BF422295FAF0097F5AF /* Common */,
+				69B48428248D50B10077EFCE /* Handy Scripts */,
 				69F1BB322180A00100F17870 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,6 +162,8 @@
 				695156992180C8BA001401CD /* Installer.swift */,
 				69F1BB4D2180A12E00F17870 /* Info.plist */,
 				69F1BB4E2180A1D000F17870 /* launchd.plist */,
+				69B48425248D3ED70077EFCE /* NSXPCConnection+AuditToken.h */,
+				69B48421248D3EAC0077EFCE /* com.smjobblesssample.installer-Bridging-Header.h */,
 			);
 			path = com.smjobblesssample.installer;
 			sourceTree = "<group>";
@@ -210,6 +228,7 @@
 					};
 					69F1BB452180A02600F17870 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -416,6 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CZPU3C72KU;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CZPU3C72KU;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,11 +478,18 @@
 		69F1BB4B2180A02700F17870 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				DEVELOPMENT_TEAM = CZPU3C72KU;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = (
 					"-sectcreate",
@@ -469,8 +497,11 @@
 					__launchd_plist,
 					"$(SRCROOT)/$(TARGET_NAME)/launchd.plist",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "com.smjobblesssample.installer/com.smjobblesssample.installer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -478,11 +509,18 @@
 		69F1BB4C2180A02700F17870 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				DEVELOPMENT_TEAM = CZPU3C72KU;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = (
 					"-sectcreate",
@@ -490,8 +528,10 @@
 					__launchd_plist,
 					"$(SRCROOT)/$(TARGET_NAME)/launchd.plist",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "com.smjobblesssample.installer/com.smjobblesssample.installer-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

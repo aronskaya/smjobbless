@@ -6,9 +6,17 @@ Also this sample shows how to establish an XPC connection between UI application
 
 ## How to make this work
 In order to see the code in this repository working:
-Replace "Mac Developer: mail@example.com (ABCDEFGHIJ)" in both Info.plist files with the certificate, that you use to sign targets. The correct name of the certificate you use can be found in `Keychain`. Double-click the certificate in the list and copy it's `Common name`.
+Replace "Mac Developer: mail@example.com (ABCDEFGHIJ)" with the certificate, that you use to sign targets.
 
-First Info.plist file is located in `Client` target, second — in `com.smjobblesssample.installer` target.
+#### 3 places to specify the certificate:
+
+1. `Client`'s Info.plist 
+2. `com.smjobblesssample.installer`'s Info.plist
+3. XPCServer.swift, `entitlements` constant.
+
+The first Info.plist file is located in `Client` target, the second — in `com.smjobblesssample.installer` target.
+
+The correct name of the certificate you use can be found in `Keychain`. Double-click the certificate in the list and copy it's `Common name`.
 
 
 ## Used Definitions
@@ -57,7 +65,8 @@ Add there a key-value pair:
 
 Key  | Value
 ------------- | -------------
-```identifier "com.smjobblesssample.installer" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: mail@example.com (ABCDEFGHIJ)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */```
+```identifier "com.smjobblesssample.installer" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: mail@example.com (ABCDEFGHIJ)"
+```
 
 #### 3.2 Server
 
@@ -93,14 +102,20 @@ Every entry in this array is a description for signing requirements for each cli
 Example:
 
 ```
-identifier "com.smjobblesssample.uiapplication" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: mail@example.com (ABCDEFGHIJ)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */
+identifier "com.smjobblesssample.uiapplication" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: mail@example.com (ABCDEFGHIJ)"
 ```
 
 * Open Server's `Build Settings` and find a setting called `Info.plist File` (`INFOPLIST_FILE`). Set the path to the Server's Info.plist. For example: `$(SRCROOT)/$(TARGET_NAME)/Info.plist`
 
 * Now when the Server target knows where it's Info.plist is located, let's build it into the resulting binary file. Find another Build Setting: `Create Info.plist Section in Binary` (`CREATE_INFOPLIST_SECTION_IN_BINARY`) and set it to `YES`.
 
+## Securing connection
+The SMJobBless() is designed in a way, that it is easy to make mistakes, that lead to serious security flaws. For details see [SecuringXPCConnection.md](./SecuringXPCConnection.md)
+
 ## Troubleshooting
+
+### Uninstalling Privileged Helper
+During debug you will probably need to uninstall the Privileged Helper several times. To make it more convenient I have added a bash script, that one can execute in Terminal every time they need to uninstall the Helper. It is located in `smjobbless/Handy Scripts/uninstall_privileged_helper.sh`.
 
 ### Error codes
 If SMJobBless() fails, look for error code explanation in `SMErrors.h` header of the ServiceManagement framework. At the time this instruction is created it contains such errors:
@@ -143,7 +158,7 @@ kSMErrorInvalidPlist,
 ```
 
 ### Python script
-As you can see, there are lots of nuances to remember. In order to help the developers Apple provides a python script `SMJobBlessUtil.py`, which is located in the root of this sample project. It offers 2 functions:
+As you can see, there are lots of nuances to remember. In order to help the developers Apple provides a python script `SMJobBlessUtil.py`, which is located in the 'Handy Scripts' directory in the root of this sample project. It offers 2 functions:
 
 * `check`
 * `setreq`
