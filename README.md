@@ -63,10 +63,9 @@ Add there a key-value pair:
 
 **Example:**
 
-Key  | Value
-------------- | -------------
-```identifier "com.smjobblesssample.installer" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: mail@example.com (ABCDEFGHIJ)"
-```
+| Key                            | Value                                                                                                                                                  |
+|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| com.smjobblesssample.installer | identifier "com.smjobblesssample.installer" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: mail@example.com (ABCDEFGHIJ)" |
 
 #### 3.2 Server
 
