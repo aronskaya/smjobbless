@@ -34,8 +34,8 @@ Server							| Helper tool (provides some installation services)
 
 ### 1. Create targets
 
-* Create а Client target; should be a bundle. `Cocoa Application` target type works great for this purpose.
-
+* Create а Client target; should be a bundle. `Cocoa Application` target type works great for this purpose.  
+  * Client's Signing & Capabilities -> remove App Sandbox.
 * Create а Server target (`Command-Line Tool`). The product name for this target should be the same as the launchd job label.
 
 ### 2. Add Helper Tool to Client's bundle
